@@ -38,8 +38,8 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={ LSPIV},
-  pdfauthor={Yihui Xie},
+  pdftitle={La raport intermédiaire},
+  pdfauthor={Antoine Viguié, Aymane Berriane, Christian Alvarez LeonWang, Wang Meng, PENG Yu},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -90,8 +90,18 @@
 
 \renewcommand{\refname}{RÉFERENCES}
 
+%\renewcommand{\chaptername}{Chapitre}
+
+\usepackage{titlesec}
+\usepackage{lipsum}
+
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Large}
+
 %标题命名
 \renewcommand{\contentsname}{SOMMAIRE}
+
+%图命名
+\renewcommand{\figurename}{Figure}
 
 %在toc中包含reference :https://tex.stackexchange.com/questions/57427/how-to-add-printindex-to-tableofcontents
 \usepackage{makeidx}
@@ -123,16 +133,16 @@
 \setlength\headheight{40pt}
 
 %多行
-\fancyhead[c]{From: Frank\\To: Michel}
+%\fancyhead[c]{From: Frank\\To: Michel}
 
 % 使用tabular 多行对齐
-\rhead{
-    \begin{tabular}[b]{l@{}}
-        Page: \thepage\\\today
-    \end{tabular}
-    }
+% \rhead{
+    % \begin{tabular}[b]{l@{}}
+        % Page: \thepage\\\today
+    % \end{tabular}
+    % }
 \lhead{\includegraphics[height=30pt]{ecole.png}}
-\cfoot{\thepage}
+\rfoot{\thepage}
 
 %页眉横线
 %\renewcommand\headrulewidth{0pt} %隐藏页眉横线
@@ -155,9 +165,8 @@
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
-\title{\includegraphics[width=1in,height=\textheight]{logo.jpg}\\
-LSPIV}
-\author{Yihui Xie}
+\title{La raport intermédiaire}
+\author{Antoine Viguié, Aymane Berriane, Christian Alvarez LeonWang, Wang Meng, PENG Yu}
 \date{2020-12-07}
 
 \begin{document}
@@ -169,8 +178,8 @@ LSPIV}
 }
 \newpage
 
-\hypertarget{sb}{%
-\section{Application de la méthode LSPIV}\label{sb}}
+\hypertarget{application-de-la-muxe9thode-lspiv}{%
+\section{Application de la méthode LSPIV}\label{application-de-la-muxe9thode-lspiv}}
 
 La technique LSPIV (Large Scale Particle Image Velocimetry) permet de
 mesurer les vitesses de surface d'un écoulement par analyse de séquence
@@ -179,11 +188,10 @@ principales:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  la préparation de l'image (voir section \ref{ip})
+  la préparation de l'image (voir section \ref{ip} )
 \item
-  le traitement PIV (voir section \ref{pp})
+  le traitement PIV (voir section \ref{pp} )
 \item
   l'analyse des données.
 \end{enumerate}
