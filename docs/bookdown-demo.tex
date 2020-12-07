@@ -4,14 +4,13 @@
 %
 \documentclass[
 ]{article}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -39,12 +38,15 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
   pdftitle={La raport intermédiaire},
-  pdfauthor={Antoine Viguié, Aymane Berriane, Christian Alvarez LeonWang, Wang Meng, PENG Yu},
+  pdfauthor={Antoine Viguié, Aymane Berriane, Christian Alvarez Leon, Meng Wang, Yu PENG},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs}
+
+
+
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -54,19 +56,6 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -80,8 +69,9 @@
 \usepackage{graphicx}
 \graphicspath{{images/}} %表示图片在当前目录下的images目录
 
-
-
+%封面====================================================================================================================
+\usepackage{pdfpages}
+%=========================================================================================================================
 
 %重新命名=================================================================================================================
 
@@ -92,10 +82,11 @@
 
 %\renewcommand{\chaptername}{Chapitre}
 
-\usepackage{titlesec}
-\usepackage{lipsum}
+%\usepackage{titlesec}
 
-\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Large}
+%\usepackage{lipsum}
+
+%\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Large}
 
 %标题命名
 \renewcommand{\contentsname}{SOMMAIRE}
@@ -108,8 +99,10 @@
 \makeindex
 \usepackage[nottoc]{tocbibind}
 
+%toc 没有headers
+\addtocontents{toc}{\protect\thispagestyle{empty}}
 
-%==========================================================================================================================
+%=========================================================================================================================
 
 
 %页眉页脚==================================================================================================================
@@ -162,21 +155,52 @@
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+
+%natbib 选项
+
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
+
+
 \title{La raport intermédiaire}
-\author{Antoine Viguié, Aymane Berriane, Christian Alvarez LeonWang, Wang Meng, PENG Yu}
+\author{Antoine Viguié, Aymane Berriane, Christian Alvarez Leon, Meng Wang, Yu PENG}
 \date{2020-12-07}
 
+%==========================================================================================================================================
 \begin{document}
-\maketitle
+
+
+
+
+
+%插入封面=================================================================
+\includepdf{images/COVERPAGE.pdf}
+%=======================================================================
+
+%插入标题=================================================================
+%%%\maketitle
+%%=======================================================================
+
+%加空白页但又heater
+%\newpage
+%\mbox{}
+%\newpage
+
+
 
 {
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
+
+
 \newpage
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+On observe régulièrement sur la Côte d'Azur, notamment à l'automne, de forts épisodes pluvieux, pouvant engendrer des crues. Par exemple, le 23 novembre 2019, des inondations exceptionnelles se sont produites sur la Côte d'Azur et ont inondé les plaines alluviales de l'Argens, de la Siagne et de la Brague notamment. Plus récemment, début octobre 2020, les vallées de la Roya, de la Vésubie ont été ravagées par des inondations, avec 500 mm relevés pendant l'épisode à Saint-Martin-Vésubie, du jamais vu à cette station depuis les relevés météorologiques. En raison de la nature destructrice des inondations, des recherches hydrologiques sur les bassins versants doivent être menées pour prendre les mesures d'anticipation et de protection de la population. Ceci nécessite par exemple de mesurer le débit sur des sections de cours d'eau non instrumentées en appareils de mesure. Dans notre projet, le but est de calculer le débit d'une section du canal de la Siagne par le logiciel Fudaa-LSPIV. Celui-ci permet de traiter des séquences d'images ou des vidéos d'écoulements pour calculer les champs de vitesse de surface et débit de la section choisie. Ce logiciel peut s'avérer utile pour mesurer le débit de sections de rivières avec un fort courant et de nombreux objets flottants, car les méthodes classiques seraient susceptibles d'abîmer le matériel. Il s'avèrera aussi nécessaire d'utiliser une autre méthode de mesure de débit, comme l'ADCP, pour comparer les résultats obtenus.
 
 \hypertarget{application-de-la-muxe9thode-lspiv}{%
 \section{Application de la méthode LSPIV}\label{application-de-la-muxe9thode-lspiv}}
