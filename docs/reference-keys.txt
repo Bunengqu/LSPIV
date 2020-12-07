@@ -1,0 +1,10 @@
+fig:lens
+eq:corr1
+eq:corr2
+eq:corr3
+fig:ortho
+eq:corr4
+fig:orthoafter
+eq:constract
+eq:gamma
+fig:pivprocessing

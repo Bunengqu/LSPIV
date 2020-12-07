@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> LSPIV</title>
+  <meta name="description" content="<br />
+LSPIV</p>" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" LSPIV" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" LSPIV" />
+  
+  
+  
+
+<meta name="author" content="Yihui Xie" />
+
+
+<meta name="date" content="2020-12-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<div><img src="images/ecole.png" width="200" alt="POLYTECH NICE-SOPHIA" hspace="30" vspace="30" /></div>
+<i><a href="./"><li>Projet d'Ingénierie:LSPIV</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Application de la méthode LSPIV</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ip"><i class="fa fa-check"></i>Image preparation</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#la-correction-de-distorsion-optique"><i class="fa fa-check"></i>La correction de distorsion optique</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#la-stabilisation"><i class="fa fa-check"></i>La stabilisation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lorthorectification-dimage"><i class="fa fa-check"></i>l’orthorectification d’image</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#la-mise-en-niveau-de-gris-et-la-correction-du-gamma-et-du-contraste"><i class="fa fa-check"></i>La mise en niveau de gris et la correction du gamma et du contraste</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#pp"><i class="fa fa-check"></i>PIV processing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<i><a href="./"><li>POLYTECH NICE-SOPHIA</a></li>   
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="logo.jpg" style="width:1in" /><br />
+LSPIV</p></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title"><p><img src="logo.jpg" style="width:1in" /><br />
+LSPIV</p></h1>
+<p class="author"><em>Yihui Xie</em></p>
+<p class="date"><em>2020-12-07</em></p>
+</div>
+<div id="sb" class="section level1">
+<h1>Application de la méthode LSPIV</h1>
+<!-- # Applying Large­Scale Particle Image Velocimetry -->
+<!-- **Low cost** -->
+<!--  Large­Scale Particle Image Velocimetry (LSPIV) -->
+<!-- >The basic principle of using LSPIV for determining surface flow velocities, is tracing particle -->
+<!-- displacements by analysing small regions (or interrogation areas) of consecutive frames through -->
+<!-- validating their similarities. -->
+<!-- The complete LSPIV method consist of three major parts: -->
+<!-- (1) the imagepreparation (see Section 2.4.1) -->
+<!-- (2) the PIV processing (see Section 2.4.2) and -->
+<!-- (3) the data analysis. -->
+<!-- ~~Box 2.2 provides the general process of the method. In Appendix A an step­by­step procedure for -->
+<!-- determining discharges from scratch is provided.~~ -->
+<p>La technique LSPIV (Large Scale Particle Image Velocimetry) permet de
+mesurer les vitesses de surface d’un écoulement par analyse de séquence
+d’images. La méthode LSPIV complète se compose de trois parties
+principales:</p>
+<ol style="list-style-type: decimal">
+<li>la préparation de l’image (voir section <a href="index.html#ip"><strong>??</strong></a>)</li>
+<li>le traitement PIV (voir section <a href="index.html#pp"><strong>??</strong></a>)</li>
+<li>l’analyse des données.</li>
+</ol>
+<div id="ip" class="section level2">
+<h2>Image preparation</h2>
+<!-- > ~~Image preparation is needed to be able to better distinguish moving -->
+<!-- > patterns from the imagery, and to remove image perspective effects. -->
+<!-- > Usually, this consists of the following steps: 1. Lens distortion -->
+<!-- > correction based on camera characteristics. 2. Video stabilisation 3. -->
+<!-- > Image orthorectification based on local GCPs. 4. Gray scaling, -->
+<!-- > contrast­ and gamma correction~~ -->
+<!-- The image manipulation to prepare the imagery for the LSPIV analysis -->
+<!-- consist of several steps. Subsequentially these steps are : (1) [lens -->
+<!-- distortion correction], (2) [stabilisation], (3) orthorectification and -->
+<!-- (4) Gray scaling, gamma­ and contrast correction. The first three steps -->
+<!-- are applied to ensure equal distances are present within the imagery. -->
+<!-- The fourth step is used to improve the seed's distinguishability from -->
+<!-- the background and therefore making sure the similarity validation -->
+<!-- process is effective. -->
+<p>La préparation de l’image est nécessaire pour être en mesure de mieux distinguer les motifs en mouvement de l’imagerie et de supprimer les effets de perspective de l’image. La manipulation d’image pour préparer l’imagerie pour l’analyse LSPIV se composent de plusieurs étapes. Subséquemment, ces étapes sont:
+(1) <a href="index.html#la-correction-de-distorsion-optique">La correction de distorsion optique</a>, (2) <a href="index.html#la-stabilisation">La stabilisation</a>, (3) <a href="index.html#lorthorectification-dimage">l’orthorectification</a> et
+(4) <a href="index.html#la-mise-en-niveau-de-gris-et-la-correction-du-gamma-et-du-contraste">La mise en niveau de gris et la correction du gamma et du contraste</a>. Les trois premières étapes
+sont appliquées pour garantir la présence de distances égales dans les images.
+La quatrième étape est utilisée pour améliorer la distinction de la graine de
+l’arrière-plan et donc s’assurer de la validation de similitude
+processus est efficace.</p>
+<!-- `There are several software which give the possibility to apply image manipulation options, like OpenCV3` -->
+<p>Il existe plusieurs logiciels qui permettent d’appliquer des options de manipulation d’images, comme OpenCV3<span class="citation">(<a href="references.html#ref-noauthor_opencv_2015" role="doc-biblioref"><span>“<span>OpenCV</span> 3.0. <span>OpenCV</span>”</span> 2015</a>)</span></p>
+<div id="la-correction-de-distorsion-optique" class="section level3 unnumbered">
+<h3>La correction de distorsion optique</h3>
+<!-- Due to the lens curvature of the camera, imagery can be distorted. -->
+<!-- Figure \@ref(fig:lens) presents the two most appearing lens distortion types, -->
+<!-- namely barrel distortion -- also known as fish eye distortion -- and -->
+<!-- pincushion distortion (Fryer and Brown, 1986) [@fryer_lens_1986] . These -->
+<!-- distortions are related to radial factors. A third type of distortion is -->
+<!-- tangential distortion, which occurs when lenses are not parallel to the -->
+<!-- image plain. Some cameras are able to cope with these distortions -->
+<!-- internally. However, most of the time some amount of post­processing is -->
+<!-- needed to adjust the imagery.à  -->
+<p>En raison de la la courbure des lentilles de l’appareil photo, les images peuvent être déformées. Figure <a href="index.html#fig:lens">1</a> présente les deux types de distorsions des lentilles les plus fréquentes,la distorsion en barillet et la distorsion en coussinet <span class="citation">(<a href="references.html#ref-fryer_lens_1986" role="doc-biblioref">Fryer and Brown 1986</a>)</span> , Ces distorsions géométriques sont liées à des facteurs radiaux. Un troisième type de distorsion est distorsion tangentielle, qui se produit lorsque les lentilles ne sont pas parallèles au plan
+image. Certaines caméras sont capables de faire face à ces distorsions
+intérieurement. Cependant, la plupart du temps, une certaine quantité de post-traitement est
+nécessaire pour ajuster les images.</p>
+
+<div class="figure"><span id="fig:lens"></span>
+<img src="images/lens.png" alt="Les differentes types de distortion. Du gauche à la droit : la grille d’origine, la distorsion en barillet et la distorsion en coussinet." width="100%" />
+<p class="caption">
+Figure 1: Les differentes types de distortion. Du gauche à la droit : la grille d’origine, la distorsion en barillet et la distorsion en coussinet.
+</p>
+</div>
+<p>Les formules suivantes sont appliquées pour supprimer la distortion radial (Voir Équation<a href="index.html#eq:corr1">(1)</a>) et la distorsion tangentielle (Voir Équation<a href="index.html#eq:corr2">(2)</a>)</p>
+<span class="math display" id="eq:corr1">\[\begin{equation}
+\begin{aligned}
+  x_{corr} = x\left(1+k_1r^2+k_2r^4+k_3r^6\right)
+  \\y_{corr} = y\left(1+k_1r^2+k_2r^4+k_3r^6\right)
+\end{aligned}
+ \tag{1}
+\end{equation}\]</span>
+<p>D’où <span class="math inline">\(𝑥\)</span> et <span class="math inline">\(𝑦\)</span> sont les coordonnées d’origine; <span class="math inline">\(x_{𝑐𝑜𝑟𝑟}\)</span> et
+<span class="math inline">\(y_{𝑐𝑜𝑟𝑟}\)</span> sont les coordonnées corrigés. <span class="math inline">\(𝑟\)</span> est la distance entre le
+point <span class="math inline">\(\left(𝑥, 𝑦\right)\)</span> et le centre de la distortion. <span class="math inline">\(𝑘_1\)</span>, <span class="math inline">\(𝑘_2\)</span>,
+et <span class="math inline">\(𝑘_3\)</span> sont les coefficients radiales. Pour la distortion en barillet et la distortion en coussinet , <span class="math inline">\(𝑘_1\)</span> est respectivemen negative et positive. <span class="math inline">\(𝑘_2\)</span> et <span class="math inline">\(𝑘_3\)</span> sont négligeables.</p>
+<span class="math display" id="eq:corr2">\[\begin{equation}
+\begin{aligned}
+   x_{corr} = x+\left[ 2 p_1 x y+ p_2\left( r^2+2x^2\right) \right]\\
+  y_{corr} = y+\left[ p_1 \left(r^2+2 y^2\right)+ 2p_2xy\right]
+\end{aligned}
+ \tag{2}
+\end{equation}\]</span>
+<p>D’où <span class="math inline">\(𝑝_1\)</span> et <span class="math inline">\(𝑝_2\)</span> sont les coefficient de la distortion tangentielle. les différents coefficients sont souvent stockés dans un tableau:</p>
+<span class="math display">\[\begin{equation}
+C_{dis}=
+\begin{bmatrix}
+k_1 &amp; k_2 &amp; p_1 &amp; p_2 &amp; k_3
+\end{bmatrix}
+\end{equation}\]</span>
+<!-- Besides the distortion coefficient, to be able to correct the imagery, a -->
+<!-- conversion between the distortion coordinates and camera resolution is -->
+<!-- made. For this, the formula as given in Equation \@ref(eq:corr3)is used. -->
+<p>À part du coefficient de distorsion, pour pouvoir corriger l’imagerie, Une conversion entre les coordonnées de distorsion et la résolution de la caméra est
+fait. Pour cela, la formule est donnée dans l’équation <a href="index.html#eq:corr3">(3)</a></p>
+<span class="math display" id="eq:corr3">\[\begin{equation}
+\begin{bmatrix}
+x\\
+y\\
+w
+\end{bmatrix}
+= M_{con} \cdot
+\begin{bmatrix}
+x\\
+y\\
+z
+\end{bmatrix}
+\quad d&#39;où \quad
+M_{con} =
+\begin{bmatrix}
+f_x &amp; 0 &amp; c_x\\
+0 &amp; f_y &amp; x_y\\
+0 &amp; 0 &amp;1
+\end{bmatrix}
+\tag{3}
+\end{equation}\]</span>
+<!-- 没看懂 -->
+<p>D’où <span class="math inline">\([𝑥, 𝑦, 𝑤]\)</span> sont les coordonnées d’image homogène 2D et <span class="math inline">\([x, y , z]\)</span> sont les coordonnées de caméra 3D . <span class="math inline">\(f_𝑥\)</span> et <span class="math inline">\(𝑓_𝑦\)</span> sont les longueurs locales de la caméra dans le sens <span class="math inline">\(𝑥\)</span> et <span class="math inline">\(𝑦\)</span> ,en genéral, ils sont identiques - <span class="math inline">\(𝑐_𝑥\)</span> et <span class="math inline">\(𝑐_𝑦\)</span> sont les coordinations de centre optique de la caméra dans le sens <span class="math inline">\(𝑥\)</span> et <span class="math inline">\(𝑦\)</span>.</p>
+</div>
+<div id="la-stabilisation" class="section level3 unnumbered">
+<h3>La stabilisation</h3>
+<!-- After applying lens distortion correction, possible imagery movements -->
+<!-- can be removed by applying video stabilisation. The main steps of -->
+<!-- stabilisation are (1) extracting key points on two sequential frames, -->
+<!-- (2) matching the points on the two frames, (3) estimating the -->
+<!-- geometrical transformation, and (4) correcting for the movement. -->
+<p>Après avoir appliqué la correction de la distorsion optique , le mouvements d’images possibles
+peut être supprimé en appliquant la stabilisation de vidéo. Les principales étapes de
+stabilisation sont (1) l’extraction de points clés sur deux trames séquentielles,
+(2) faire correspondre les points sur les deux trames, (3) estimer le
+transformation géométrique, et (4) correction du mouvement.</p>
+</div>
+<div id="lorthorectification-dimage" class="section level3 unnumbered">
+<h3>l’orthorectification d’image</h3>
+<!-- To remove the effects of image perspective -- where objects closer to -->
+<!-- the camera seem to be larger than objects in the background -- -->
+<!-- orthorectification is applied. When applying orthorectification, the -->
+<!-- coordinate system of the imagery are transferred to a local coordinate -->
+<!-- system. For this local coordinate system ground control points (GCPs) -- -->
+<!-- set up alongside the stream -- are used. For the orthorectification -->
+<!-- process to be as accurate as possible, at least four GCPs are needed, if -->
+<!-- the imagery is captured perpendicular to the stream, or when the GCPs -->
+<!-- are placed at the same level as the water level. A minimum amount of six -->
+<!-- GCPs is needed when the GCPs are not placed in the same plane as the -->
+<!-- water level. In Figure \@ref(fig:ortho) the different gauging site -->
+<!-- set-ups are shown. -->
+<p>Pour supprimer les effets de la perspective de l’image – là où les objets sont plus proches
+de la caméra semble être plus grande que les objets en arrière-plan – ,
+l’orthorectification est appliquée. Lors de l’application d’orthorectification,
+le système de coordonnées de l’imagerie est transféré à une coordonnée locale
+système. Pour ce système de coordonnées locales, points de contrôle au sol (GCP) –
+mis en place à côté du flux – sont utilisés. Pour l’orthorectification
+processus pour être aussi précis que possible, au moins quatre GCP sont nécessaires, si
+les images sont capturées perpendiculairement au flux ou lorsque les GCP
+sont placés au même niveau que le niveau de l’eau. Un minimum de six
+GCP sont nécessaires lorsque les GCP ne sont pas placés dans le même plan que le
+niveau d’eau. Sur la Figure <a href="index.html#fig:ortho">2</a> les différents sites de jaugeage
+et les configurations sont affichées.</p>
+
+<div class="figure"><span id="fig:ortho"></span>
+<img src="images/ortho.png" alt="Nombre de points de contrôle au sol (GCP) nécessaires dans différentes circonstances." width="100%" />
+<p class="caption">
+Figure 2: Nombre de points de contrôle au sol (GCP) nécessaires dans différentes circonstances.
+</p>
+</div>
+<!-- when using four GCPs, the inversion factors $𝑓_𝑥$ and $𝑓_𝑦$ are -->
+<!-- determined using the formula as stated in Equation \@ref(eq:corr4). -->
+<p>Lors de l’utilisation de quatre GCP, les facteurs d’inversion <span class="math inline">\(𝑓_𝑥\)</span> et <span class="math inline">\(𝑓_𝑦\)</span> sont
+déterminé en utilisant la formule indiquée dans l’équation <a href="index.html#eq:corr4">(4)</a>.</p>
+<span class="math display" id="eq:corr4">\[\begin{equation}
+p_{loc}\left(x,y\right)=p_{img}\left(f_x\left(x,y\right), f_y\left(x,y\right)\right)
+\tag{4}
+\end{equation}\]</span>
+<!-- where $𝑝_{𝑑𝑠𝑡}\left(𝑥, 𝑦, 𝑧\right)$ is the geographic location of the -->
+<!-- ground control point in the local coordinate system, usually in metric -->
+<!-- units; $𝑝_{𝑠𝑟𝑐}\left(𝑥, 𝑦\right)$ is the xy-coordinate of the ground -->
+<!-- control point in the imagery, usually in pixels; and $𝑓_𝑥$ and $𝑓_𝑦$ the -->
+<!-- inversion factors. -->
+<p>D’où <span class="math inline">\(𝑝_ {𝑑𝑠𝑡} \left (𝑥, 𝑦, 𝑧 \right)\)</span> est l’emplacement géographique du
+point de contrôle au sol dans le système de coordonnées local, généralement en métrique
+units; <span class="math inline">\(𝑝_ {𝑠𝑟𝑐} \left (𝑥, 𝑦 \right)\)</span> est la coordonnée xy du sol
+point de contrôle dans l’imagerie, généralement en pixels; et <span class="math inline">\(𝑓_𝑥\)</span> et <span class="math inline">\(𝑓_𝑦\)</span> le
+facteurs d’inversion.</p>
+<!-- Simultaneously with this process, the resolution of the image can be set -->
+<!-- by multiplying the $𝐺𝐶𝑃_{𝑑𝑠𝑡}\left(𝑥, 𝑦\right)$ coordinates with the -->
+<!-- desired pixels per meter coefficient. An example of the -->
+<!-- orthorectification process is shown in Figure \@ref(fig:orthoafter) . -->
+<p>Simultanément à ce processus, la résolution de l’image peut être réglée
+en multipliant les coordonnées <span class="math inline">\(𝐺𝐶𝑃_ {𝑑𝑠𝑡} \left (𝑥, 𝑦 \right)\)</span> par les
+pixels souhaités par coefficient de mètre. Un exemple de
+le processus d’orthorectification est illustré à la Figure <a href="index.html#fig:orthoafter">3</a> .</p>
+
+<div class="figure"><span id="fig:orthoafter"></span>
+<img src="images/ortho_after.png" alt="Exemple de processus d’orthorectification utilisant quatre GCP, indiqués par des poteaux en bambou le long du ruisseau." width="100%" />
+<p class="caption">
+Figure 3: Exemple de processus d’orthorectification utilisant quatre GCP, indiqués par des poteaux en bambou le long du ruisseau.
+</p>
+</div>
+<!-- When six (or more) GCPs are used -- because 3-dimensional coordinates -->
+<!-- for the GCPs are needed -- a pinhole model can be used. This method is -->
+<!-- explained by Jodeau et al. (2008). -->
+<p>Lorsque six (ou plus) GCP sont utilisés - parce que les coordonnées en trois dimensions
+pour les GCP sont nécessaires - un modèle de sténopé peut être utilisé. Cette méthode est
+expliqué par <span class="citation">(<a href="references.html#ref-jodeau_application_2008" role="doc-biblioref">Jodeau et al. 2008</a>)</span> .</p>
+</div>
+<div id="la-mise-en-niveau-de-gris-et-la-correction-du-gamma-et-du-contraste" class="section level3 unnumbered">
+<h3>La mise en niveau de gris et la correction du gamma et du contraste</h3>
+<!-- The last step within the image preparation, is the conversion of the -->
+<!-- imagery to a gray scale, and to apply contrast- and gamma correction. -->
+<!-- Gray scaling is needed to be able to apply similarity validation between -->
+<!-- sequential video frames. Contrast- and gamma correction is applied to -->
+<!-- enhance the visibility of seeds. The contrast- and gamma corrections are -->
+<!-- applied using the following formulas : -->
+<p>La dernière étape de la préparation de l’image est la conversion du
+imagerie à une échelle de gris et pour appliquer une correction de contraste et gamma.
+Une mise à l’échelle des gris est nécessaire pour pouvoir appliquer la validation de similarité entre
+images vidéo séquentielles. La correction de contraste et gamma est appliquée à
+améliorer la visibilité des semences. Les corrections de contraste et gamma sont
+appliqué à l’aide des formules suivantes:</p>
+<span class="math display" id="eq:constract">\[\begin{equation}
+O_{constract} = \alpha \cdot I + \beta
+\tag{5}
+\end{equation}\]</span>
+<span class="math display" id="eq:gamma">\[\begin{equation}
+O_{gamma} = \left(\frac{I}{255}\right)^\frac{1}{\gamma} \cdot 255
+\tag{6}
+\end{equation}\]</span>
+<p>where <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> defines the contrast correction; <span class="math inline">\(\gamma\)</span> the
+gamma correction; <span class="math inline">\(O_n\)</span> are the corrected imagery; and <span class="math inline">\(I\)</span> is the
+original imagery</p>
+<p>D’où <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span> définit la correction du contraste; <span class="math inline">\(\gamma\)</span> est la correction de gamma; <span class="math inline">\(O_n\)</span> sont les imageries corrigés; et <span class="math inline">\(I\)</span> est l’imagerie d’origine.</p>
+</div>
+</div>
+<div id="pp" class="section level2">
+<h2>PIV processing</h2>
+<!-- Figure 2.8 shows the steps of the PIV processing. For two sequential -->
+<!-- frames, the imagery is divided into grid cells. By determining -->
+<!-- similarity validation -- for example cross-correlation or a -->
+<!-- signal-to-noise ratio (Osorio­Cano et al., 2013; Ran et al., 2016) -- -->
+<!-- between the two frames within the search area, displacements can be -->
+<!-- determined. These displacements are then converted into flow velocity -->
+<!-- vectors. -->
+<p>La figure <a href="index.html#fig:pivprocessing">4</a> montre les étapes du traitement PIV. Pour deux séquentiels
+cadres, les images sont divisées en cellules de grille. En déterminant
+validation de similarité - par exemple, une corrélation croisée ou une
+rapport signal / bruit <span class="citation">(<a href="references.html#ref-ran_application_2016" role="doc-biblioref">Ran et al. 2016</a> ; <a href="references.html#ref-osorio-cano_method_2013" role="doc-biblioref">Osorio-Cano, Osorio, and Medina 2013</a>)</span> -
+entre les deux cadres de la zone de recherche, les déplacements peuvent être
+déterminé. Ces déplacements sont ensuite convertis en vitesse d’écoulement
+vecteurs.</p>
+<!-- After applying this process on 𝑁 frames, a total of \$𝑁−1 velocity maps -->
+<!-- are created. For each velocity map, the results can be further improved -->
+<!-- by applying additional filtering based on the similarity value in each -->
+<!-- single interrogation window, and replacing these filtered values by -->
+<!-- interpolation the known surrounding grid cells. These post­processing -->
+<!-- steps are dependent on the software used, or the results required. In -->
+<!-- Section 4.3.2 the impact of this process is discussed -->
+<!-- After retrieving the flow velocities, data analysis can be applied to -->
+<!-- acquire time­averaged results. An approach for this process is provided -->
+<!-- in Chapter 5. -->
+<p>Après avoir appliqué ce processus sur <span class="math inline">\(𝑁\)</span> images, un total de <span class="math inline">\(𝑁− 1\)</span> cartes de vitesse
+sont créées. Pour chaque carte de vitesse, les résultats peuvent être encore améliorés
+en appliquant un filtrage supplémentaire basé sur la valeur de similarité dans chaque
+fenêtre d’interrogation unique, et en remplaçant ces valeurs filtrées par
+interpolation les cellules de la grille environnantes connues. Ces post-traitements
+les étapes dépendent du logiciel utilisé ou des résultats requis.</p>
+<!-- ## vocabulaire  -->
+<!-- image perspective  Effet de perspective 透视效应 -->
+<!-- lens distortion correction La correction de distorsion optique 光学畸变 -->
+<!-- stabilisation  La stabilisation 稳定 -->
+<!-- orthorectification l'orthorectification 矫正 -->
+<!-- Gray scaling  mise en Niveau de gris 灰阶图 -->
+<!-- gamma and contrast correction  la correction de gamma et contrast -->
+<!-- lens curvature la courbure des lentilles -->
+<!-- Barrel distortion fish eye distortion Distorsion en barillet -->
+<!-- pincushion distortion  Distorsion en coussinet -->
+<!-- tangential distortion distorsion tangentielle -->
+<!-- image plain plain image -->
+<!-- cope with faire face à  -->
+<!-- radial distorision distorsion radiale -->
+<!-- frame trame 帧 -->
+<!-- background arrière-plan 背景 -->
+
+<div class="figure"><span id="fig:pivprocessing"></span>
+<img src="images/pivprocessing.png" alt="Vue schématique de la méthode LSPIV où une fenêtre d’interrogation est déterminée (la grille est dessinée plus grande dan généralement appliqué) dans la première image et les graines présentes sont comparées à une zone de recherche dans l’image séquentielle 2 à déterminer leurs déplacements. En multipliant le déplacement par la période de temps de trame, la vitesse est déterminée. Lorsque vous appliquez ceci sur toute l’image, une carte de vitesse d’écoulement de surface peut être créée pour chaque image individuelle." width="100%" />
+<p class="caption">
+Figure 4: Vue schématique de la méthode LSPIV où une fenêtre d’interrogation est déterminée (la grille est dessinée plus grande dan généralement appliqué) dans la première image et les graines présentes sont comparées à une zone de recherche dans l’image séquentielle 2 à déterminer leurs déplacements. En multipliant le déplacement par la période de temps de trame, la vitesse est déterminée. Lorsque vous appliquez ceci sur toute l’image, une carte de vitesse d’écoulement de surface peut être créée pour chaque image individuelle.
+</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="references.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "White",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "static"
+},
+"search": true,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
