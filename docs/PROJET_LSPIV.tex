@@ -207,7 +207,7 @@
 \section*{Introduction}\label{introduction}}
 \addcontentsline{toc}{section}{Introduction}
 
-On observe régulièrement sur la Côte d'Azur, notamment à l'automne, de forts épisodes pluvieux, pouvant engendrer des crues. Par exemple, le 23 novembre 2019, des inondations exceptionnelles se sont produites sur la Côte d'Azur et ont inondé les plaines alluviales de l'Argens, de la Siagne et de la Brague notamment. Plus récemment, début octobre 2020, les vallées de la Roya, de la Vésubie ont été ravagées par des inondations, avec 500 mm relevés pendant l'épisode à Saint-Martin-Vésubie (Météo France), du jamais vu à cette station depuis les relevés météorologiques. En raison de la nature destructrice des inondations, des recherches hydrologiques sur les bassins versants doivent être menées pour prendre les mesures d'anticipation et de protection de la population. Ceci nécessite par exemple de mesurer le débit sur des sections de cours d'eau non instrumentées en appareils de mesure. Dans notre projet, le but est de calculer le débit d'une section du canal de la Siagne par le logiciel Fudaa-LSPIV. Celui-ci permet de traiter des séquences d'images ou des vidéos d'écoulements pour calculer les champs de vitesse de surface et débit de la section choisie. Ce logiciel peut s'avérer utile pour mesurer le débit de sections de rivières avec un fort courant et de nombreux objets flottants, car les méthodes classiques seraient susceptibles d'abîmer le matériel. Il s'avèrera aussi nécessaire d'utiliser une autre méthode de mesure de débit, comme l'ADCP, pour comparer les résultats obtenus.
+On observe régulièrement sur la Côte d'Azur, notamment à l'automne, de forts épisodes pluvieux, pouvant engendrer des crues. Par exemple, le 23 novembre 2019, des inondations exceptionnelles se sont produites sur la Côte d'Azur et ont inondé les plaines alluviales de l'Argens, de la Siagne et de la Brague notamment. Plus récemment, début octobre 2020, les vallées de la Roya, de la Vésubie ont été ravagées par des inondations, avec 500 mm relevés pendant l'épisode à Saint-Martin-Vésubie \citep{noauthor_meteo-france_nodate}, du jamais vu à cette station depuis les relevés météorologiques. En raison de la nature destructrice des inondations, des recherches hydrologiques sur les bassins versants doivent être menées pour prendre les mesures d'anticipation et de protection de la population. Ceci nécessite par exemple de mesurer le débit sur des sections de cours d'eau non instrumentées en appareils de mesure. Dans notre projet, le but est de calculer le débit d'une section du canal de la Siagne par le logiciel Fudaa-LSPIV. Celui-ci permet de traiter des séquences d'images ou des vidéos d'écoulements pour calculer les champs de vitesse de surface et débit de la section choisie. Ce logiciel peut s'avérer utile pour mesurer le débit de sections de rivières avec un fort courant et de nombreux objets flottants, car les méthodes classiques seraient susceptibles d'abîmer le matériel. Il s'avèrera aussi nécessaire d'utiliser une autre méthode de mesure de débit, comme l'ADCP, pour comparer les résultats obtenus.
 
 \newpage
 
@@ -227,7 +227,7 @@ Le canal de la Siagne permet d'acheminer l'eau prélevée dans la Siagne depuis 
 
 Datant de 1868, c'est un ouvrage hydraulique de transport et d'alimentation en eau vers la ville de Grasse ainsi que Cannes et ses environs.
 Désormais élément du paysage local, le canal s'étend à ciel ouvert sur une grande partie.
-La section étudiée est facilement accessible à pieds comme en voiture, ce qui facilite les mesures. Puis, la forme du canal est simple et le débit faible, ce qui donnera une mesure de débit plus précise (canaldelasiagne.fr)
+La section étudiée est facilement accessible à pieds comme en voiture, ce qui facilite les mesures. Puis, la forme du canal est simple et le débit faible, ce qui donnera une mesure de débit plus précise \citep{noauthor_canaldelasiagnefr_2019}.
 
 \hypertarget{pruxe9sentation-des-muxe9thodes-lspiv}{%
 \subsection{Présentation des méthodes LSPIV}\label{pruxe9sentation-des-muxe9thodes-lspiv}}
@@ -244,7 +244,7 @@ Les méthodes LSPIV (Large Scales Particle Image Velocity) permettent de mesurer
   Le calcul de la vitesse de déplacement des traceurs pour déterminer le débit.
 \end{itemize}
 
-La LSPIV est une méthode applicable quelle que soit le débit ou la taille de la rivière. C'est donc une méthode utilisable aussi bien en période de crue que d'étiage. Muste et al.~(2008) ont signalé une erreur moyenne sur la vitesse de 10\%.
+La LSPIV est une méthode applicable quelle que soit le débit ou la taille de la rivière. C'est donc une méthode utilisable aussi bien en période de crue que d'étiage. \citep{muste_large-scale_2008} ont signalé une erreur moyenne sur la vitesse de 10\%.
 
 \hypertarget{principle}{%
 \section{Méthodologie}\label{principle}}
@@ -266,7 +266,7 @@ Il existe deux méthodes d'orthorectification :
   L'orthorectification complète permet d'apporter une correction eux problèmes de perspective. Les coordonnées terrain (X,Y,Z) des points de références sont renseignées. Il suffit ensuite de cliquer sur le point de référence pour lui associer ses coordonnées images. Pour une ortho rectification en 3D, il faut au moins 6 points de référence et quatre pour une orthorectification 2D. Il est également possible d'importer les coordonnées des points GRP depuis un fichier .dat. L'étape suivante est la vérification des GRP. Pour cela, on part des coordonnées image des points pour calculer les coordonnées terrain sur le logiciel. On mesure ensuite l'écart entre les coordonnées terrains mesurées sur place et celles mesurées sur le logiciel. Un tableau des écarts est affiché. La dernière étape est une étape de transformation. On commence par indiquer sur le logiciel une zone d'étude rectangulaire pour obtenir des calculs plus rapidement. La résolution doit aussi être adaptée afin que les détails des traceurs soient visibles. Enfin, indiquer le niveau d'eau est essentiel.
 \end{enumerate}
 
-Ces deux méthodes sotn résumées sur la figure \ref{fig:orthowang} :
+Ces deux méthodes sont résumées sur la figure \ref{fig:orthowang} :
 
 
 
@@ -279,7 +279,7 @@ Ces deux méthodes sotn résumées sur la figure \ref{fig:orthowang} :
 
 Les logiciels LSPIV calculent la vitesse instantanée de surface d'une rivière ou cours d'eau en utilisant une méthode statique en corrélation croisée, cette méthode détermine le déplacement des traceurs sur les images ortho rectifiées à condition que les traceurs soient visibles à la surface.
 
-La méthode analyse statistiquement la position des traceurs en commun sur deux images successives séparées par un intervalle de temps. Cela consiste à calculer la corrélation entre l'aire d'interrogation \(\text{AI}\) centrée sur un point \(a_{ij}\) dans la première image, et l'aire \(\text{IA}\) centrée sur un point \(b_{ij}\) dans la deuxième image, où \(\text{IA}\) définira la taille des traceurs étudiés dans l'identification des déplacements. Le calcul des déplacements est effectué sur la deuxième image dans l'aire de recherche \(\text{SA}\) sur le point \(b_{ij}\)
+La méthode analyse statistiquement la position des traceurs en commun sur deux images successives séparées par un intervalle de temps. Cela consiste à calculer la corrélation entre l'aire d'interrogation \(\text{AI}\) centrée sur un point \(a_{ij}\) dans la première image, et l'aire \(\text{IA}\) centrée sur un point \(b_{ij}\) dans la deuxième image, où \(\text{IA}\) définira la taille des traceurs étudiés dans l'identification des déplacements. Le calcul des déplacements est effectué sur la deuxième image dans l'aire de recherche \(\text{SA}\) sur le point \(b_{ij}\) .
 
 
 
@@ -300,7 +300,7 @@ Fudaa-LSPIV calcule la vitesse instantanée de surface à partir de traceurs, ma
 \alpha =  \frac{\text{Vitesse moyenne sur la tranche d'eau}}{\text{Vitesse de surface}}
 \end{equation}
 
-Une valeur de \(\alpha\) égale à 0.86 peut être choisie pour un écoulement moyen. La valeur de \(\alpha\) sera inférieure à 0.86 en écoulements peu profond ou rugueux, et pour les écoulements de majeur profondeur ou lisse \(\alpha\) sera supérieure à 0.86 (Jodeau, Hauet, et Le Coz - 2013). \citep{hauet_application_2013}
+Une valeur de \(\alpha\) égale à 0.86 peut être choisie pour un écoulement moyen. La valeur de \(\alpha\) sera inférieure à 0.86 en écoulements peu profond ou rugueux, et pour les écoulements de majeur profondeur ou lisse \(\alpha\) sera supérieure à 0.86 \citep{hauet_application_2013} .
 
 \newpage
 

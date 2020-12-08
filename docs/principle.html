@@ -94,16 +94,16 @@
 <li class="chapter" data-level="2.3" data-path="principle.html"><a href="principle.html#calcul-de-débit"><i class="fa fa-check"></i><b>2.3</b> Calcul de débit</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html"><i class="fa fa-check"></i><b>A</b> Application de la méthode LSPIV</a>
+<li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html"><i class="fa fa-check"></i>Application de la méthode LSPIV</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#ip"><i class="fa fa-check"></i><b>A.1</b> Image preparation</a>
+<li class="chapter" data-level="4" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#ip"><i class="fa fa-check"></i><b>4</b> Image preparation</a>
 <ul>
 <li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#la-correction-de-distorsion-optique"><i class="fa fa-check"></i>La correction de distorsion optique</a></li>
 <li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#la-stabilisation"><i class="fa fa-check"></i>La stabilisation</a></li>
 <li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#lorthorectification-dimage"><i class="fa fa-check"></i>l’orthorectification d’image</a></li>
 <li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#la-mise-en-niveau-de-gris-et-la-correction-du-gamma-et-du-contraste"><i class="fa fa-check"></i>La mise en niveau de gris et la correction du gamma et du contraste</a></li>
 </ul></li>
-<li class="chapter" data-level="A.2" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#pp"><i class="fa fa-check"></i><b>A.2</b> PIV processing</a></li>
+<li class="chapter" data-level="5" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#pp"><i class="fa fa-check"></i><b>5</b> PIV processing</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
 <li class="divider"></li>
@@ -138,10 +138,10 @@ En ce qui concerne l’utilisation d’une vidéo, il est nécessaire de précis
 <li><p>La mise à l’échelle est une méthode utilisée lorsque les problèmes liés à la perspective sont négligeables, c’est-à-dire lorsque la caméra est verticale. D’abord, on choisit la résolution de l’image (en m/pixel). Soit on la saisit directement, soit on définit un segment reliant deux points de longueur réelle connue, ce qui définira la résolution. On peut également rentrer les coordonnées de ces deux points. Ensuite, on effectue la transformation. Cela permet si besoin de modifier le repère réel des orthoimages. On peut également remplacer les coordonnées horaires par les coordonnées images. L’onglet « autres » permet de définir le niveau d’eau et les coordonnées des coins de l’orthoimage.</p></li>
 <li><p>L’orthorectification complète permet d’apporter une correction eux problèmes de perspective. Les coordonnées terrain (X,Y,Z) des points de références sont renseignées. Il suffit ensuite de cliquer sur le point de référence pour lui associer ses coordonnées images. Pour une ortho rectification en 3D, il faut au moins 6 points de référence et quatre pour une orthorectification 2D. Il est également possible d’importer les coordonnées des points GRP depuis un fichier .dat. L’étape suivante est la vérification des GRP. Pour cela, on part des coordonnées image des points pour calculer les coordonnées terrain sur le logiciel. On mesure ensuite l’écart entre les coordonnées terrains mesurées sur place et celles mesurées sur le logiciel. Un tableau des écarts est affiché. La dernière étape est une étape de transformation. On commence par indiquer sur le logiciel une zone d’étude rectangulaire pour obtenir des calculs plus rapidement. La résolution doit aussi être adaptée afin que les détails des traceurs soient visibles. Enfin, indiquer le niveau d’eau est essentiel.</p></li>
 </ol>
-<p>Ces deux méthodes sotn résumées sur la figure <a href="principle.html#fig:orthowang">2.1</a> :</p>
+<p>Ces deux méthodes sont résumées sur la figure <a href="principle.html#fig:orthowang">2.1</a> :</p>
 
 <div class="figure"><span id="fig:orthowang"></span>
-<img src="images/Orthowang.png" alt="présentation des différents modes d’orthorectification selon la position de la caméra (source à préciser)" width="100%" />
+<img src="images/Orthowang.png" alt="présentation des différents modes d’orthorectification selon la position de la caméra (source à préciser)" width="100%"  />
 <p class="caption">
 Figure 2.1: présentation des différents modes d’orthorectification selon la position de la caméra (source à préciser)
 </p>
@@ -150,10 +150,10 @@ Figure 2.1: présentation des différents modes d’orthorectification selon la 
 <div id="calcul-de-la-vitesse-du-déplacement-des-traceurs" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Calcul de la vitesse du déplacement des traceurs</h2>
 <p>Les logiciels LSPIV calculent la vitesse instantanée de surface d’une rivière ou cours d’eau en utilisant une méthode statique en corrélation croisée, cette méthode détermine le déplacement des traceurs sur les images ortho rectifiées à condition que les traceurs soient visibles à la surface.</p>
-<p>La méthode analyse statistiquement la position des traceurs en commun sur deux images successives séparées par un intervalle de temps. Cela consiste à calculer la corrélation entre l’aire d’interrogation <span class="math inline">\(\text{AI}\)</span> centrée sur un point <span class="math inline">\(a_{ij}\)</span> dans la première image, et l’aire <span class="math inline">\(\text{IA}\)</span> centrée sur un point <span class="math inline">\(b_{ij}\)</span> dans la deuxième image, où <span class="math inline">\(\text{IA}\)</span> définira la taille des traceurs étudiés dans l’identification des déplacements. Le calcul des déplacements est effectué sur la deuxième image dans l’aire de recherche <span class="math inline">\(\text{SA}\)</span> sur le point <span class="math inline">\(b_{ij}\)</span></p>
+<p>La méthode analyse statistiquement la position des traceurs en commun sur deux images successives séparées par un intervalle de temps. Cela consiste à calculer la corrélation entre l’aire d’interrogation <span class="math inline">\(\text{AI}\)</span> centrée sur un point <span class="math inline">\(a_{ij}\)</span> dans la première image, et l’aire <span class="math inline">\(\text{IA}\)</span> centrée sur un point <span class="math inline">\(b_{ij}\)</span> dans la deuxième image, où <span class="math inline">\(\text{IA}\)</span> définira la taille des traceurs étudiés dans l’identification des déplacements. Le calcul des déplacements est effectué sur la deuxième image dans l’aire de recherche <span class="math inline">\(\text{SA}\)</span> sur le point <span class="math inline">\(b_{ij}\)</span> .</p>
 
 <div class="figure"><span id="fig:unnamed-chunk-4"></span>
-<img src="images/calculationdevitesse.png" alt="Principe d’identification du déplacement des traceurs (Manuel d’utilisation Fudaa-LSPIV Version 1.6.4)" width="100%" />
+<img src="images/calculationdevitesse.png" alt="Principe d’identification du déplacement des traceurs (Manuel d’utilisation Fudaa-LSPIV Version 1.6.4)" width="100%"  />
 <p class="caption">
 Figure 2.2: Principe d’identification du déplacement des traceurs (Manuel d’utilisation Fudaa-LSPIV Version 1.6.4)
 </p>
@@ -167,7 +167,9 @@ Figure 2.2: Principe d’identification du déplacement des traceurs (Manuel d�
 <span class="math display">\[\begin{equation}
 \alpha =  \frac{\text{Vitesse moyenne sur la tranche d&#39;eau}}{\text{Vitesse de surface}}
 \end{equation}\]</span>
-<p>Une valeur de <span class="math inline">\(\alpha\)</span> égale à 0.86 peut être choisie pour un écoulement moyen. La valeur de <span class="math inline">\(\alpha\)</span> sera inférieure à 0.86 en écoulements peu profond ou rugueux, et pour les écoulements de majeur profondeur ou lisse <span class="math inline">\(\alpha\)</span> sera supérieure à 0.86 (Jodeau, Hauet, et Le Coz - 2013). <span class="citation">(<a href="references.html#ref-hauet_application_2013" role="doc-biblioref">Hauet et al. 2013</a>)</span></p>
+<p>Une valeur de <span class="math inline">\(\alpha\)</span> égale à 0.86 peut être choisie pour un écoulement moyen. La valeur de <span class="math inline">\(\alpha\)</span> sera inférieure à 0.86 en écoulements peu profond ou rugueux, et pour les écoulements de majeur profondeur ou lisse <span class="math inline">\(\alpha\)</span> sera supérieure à 0.86 <span class="citation">(<a href="references.html#ref-hauet_application_2013" role="doc-biblioref">Hauet et al. 2013</a>)</span> .</p>
+<!-- \newpage -->
+<!-- # REFERENCES {-} -->
 
 </div>
 </div>
