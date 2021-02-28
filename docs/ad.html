@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>l’analyse des donnée | La raport intermédiaire</title>
+  <meta name="description" content="l’analyse des donnée | La raport intermédiaire" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="l’analyse des donnée | La raport intermédiaire" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="l’analyse des donnée | La raport intermédiaire" />
+  
+  
+  
+
+<meta name="author" content="Antoine Viguié, Aymane Berriane, Christian Alvarez Leon, Meng Wang, Yu PENG" />
+
+
+<meta name="date" content="2021-02-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="piv.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<div><img src="images/ecole.png" width="200" alt="POLYTECH NICE-SOPHIA" hspace="30" vspace="30"/></div>
+<li><a href="./"><li>Projet d'Ingénierie:LSPIV</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html"><i class="fa fa-check"></i>la préparation de l’image</a>
+<ul>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html#la-correction-de-distorsion-optique"><i class="fa fa-check"></i>La correction de distorsion optique</a></li>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html#lorthorectification"><i class="fa fa-check"></i>l’orthorectification</a></li>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html#la-mise-en-niveau-de-gris-et-la-correction-du-gamma-et-du-contraste."><i class="fa fa-check"></i>La mise en niveau de gris et la correction du gamma et du contraste.</a></li>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html#pour-tous-les-images"><i class="fa fa-check"></i>Pour tous les images</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="piv.html"><a href="piv.html"><i class="fa fa-check"></i>le traitement PIV</a></li>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html"><i class="fa fa-check"></i>l’analyse des donnée</a>
+<ul>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html#résultats-non-traités"><i class="fa fa-check"></i>Résultats non traités</a></li>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html#filtrage"><i class="fa fa-check"></i>Filtrage</a></li>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html#substitution"><i class="fa fa-check"></i>Substitution</a></li>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html#estimation-de-décharge"><i class="fa fa-check"></i>Estimation de décharge</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
+<li class="divider"></li>
+<li><a href="https://univ-cotedazur.fr/"><li>POLYTECH NICE-SOPHIA</a></li>   
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">La raport intermédiaire</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ad" class="section level1 unnumbered">
+<h1>l’analyse des donnée</h1>
+<p>Ce fichier traite deux étapes de post-traitement pour acquérir des vitesses d’écoulement de surface à une section transversale spécifique. Les étapes de post-traitement sont nommées filtrage et substitution . Les deux processus sont expliqués dans les sections suivantes. Pour ces étapes, plusieurs informations supplémentaires sont nécessaires à savoir:</p>
+<ul>
+<li><p>bathymétrie locale,</p></li>
+<li><p>niveau d’eau,</p></li>
+<li><p>paramètres de progression verticale des vitesses d’écoulement de surface.</p></li>
+</ul>
+<p>Dans les sections à venir, traiter les sujets suivants: (1) les résultats non traités, (2) le filtrage des vitesses d’écoulement inférieures, et (3) la substitution des vitesses d’écoulement en cas de manque de graines.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="ad.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb31-2"><a href="ad.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb31-3"><a href="ad.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb31-4"><a href="ad.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb31-5"><a href="ad.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> interpolate</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="ad.html#cb32-1" aria-hidden="true" tabindex="-1"></a>dir_files <span class="op">=</span> <span class="st">&#39;Python/files&#39;</span></span>
+<span id="cb32-2"><a href="ad.html#cb32-2" aria-hidden="true" tabindex="-1"></a>bat <span class="op">=</span> <span class="vs">r&#39;Python/bathymetry.csv&#39;</span></span></code></pre></div>
+<div id="résultats-non-traités" class="section level2 unnumbered">
+<h2>Résultats non traités</h2>
+<p>la zone d’intérêt se situe à 1 mètre à gauche et à trois mètres à droite du point central de la bathymétrie (fournie dans le fichier bathymetry.csv). Comme l’écoulement va de gauche à droite, seules les composantes x des vitesses d’écoulement sont utilisées pour estimer les vitesses d’écoulement moyennes.</p>
+<p>La largeur du ruisseau est divisée en différentes sections transversales. Pour chaque section, les vitesses d’écoulement sont rassemblées et une valeur moyenne est déterminée.</p>
+<p>Tout d’abord, certaines caractéristiques de base sont prouvées. L’emplacement du centre de la bathymétrie dans l’imagerie (<span class="math inline">\(centre_x\)</span> et <span class="math inline">\(centre_y\)</span>), les emplacements des berges du cours d’eau à la bathymétrie (<span class="math inline">\(y_0\)</span> et <span class="math inline">\(y_1\)</span>), et le niveau d’eau (<span class="math inline">\(w_l\)</span>) pendant la vidéo.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="ad.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># localisation de la bathymétrie du centre dans l&#39;imagerie (mètres).</span></span>
+<span id="cb33-2"><a href="ad.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisé pour aligner les vitesses d&#39;écoulement avec la bathymétrie</span></span>
+<span id="cb33-3"><a href="ad.html#cb33-3" aria-hidden="true" tabindex="-1"></a>centre_x, centre_y <span class="op">=</span> [<span class="fl">8.3471579</span> , <span class="fl">2.01868403</span>]</span>
+<span id="cb33-4"><a href="ad.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="ad.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># emplacements banques de flux</span></span>
+<span id="cb33-6"><a href="ad.html#cb33-6" aria-hidden="true" tabindex="-1"></a>y0, y1 <span class="op">=</span> [<span class="op">-</span><span class="fl">1.397</span>, <span class="fl">3.785</span>]</span>
+<span id="cb33-7"><a href="ad.html#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="ad.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co"># niveau d&#39;eau (par rapport au point bathymétrique le plus bas)</span></span>
+<span id="cb33-9"><a href="ad.html#cb33-9" aria-hidden="true" tabindex="-1"></a>wl <span class="op">=</span> <span class="fl">0.9</span></span></code></pre></div>
+<p>La bathymétrie se trouve dans le fichier <strong>bathymetry.csv</strong>. Pour utiliser cette bathymétrie, les points sont interpolés à l’aide de la fonction scipy.interpolate.interpolate.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="ad.html#cb34-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-2"><a href="ad.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># importer la bathymétrie locale</span></span>
+<span id="cb34-3"><a href="ad.html#cb34-3" aria-hidden="true" tabindex="-1"></a>df_bat <span class="op">=</span> pd.read_table(bat, sep<span class="op">=</span><span class="st">&#39;;&#39;</span>, usecols<span class="op">=</span>[<span class="st">&#39;Y&#39;</span>, <span class="st">&#39;H&#39;</span>])</span>
+<span id="cb34-4"><a href="ad.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># fonction interpolée de la bathymétrie</span></span>
+<span id="cb34-5"><a href="ad.html#cb34-5" aria-hidden="true" tabindex="-1"></a>func_bat <span class="op">=</span> interpolate.interp1d(df_bat[<span class="st">&#39;Y&#39;</span>], df_bat[<span class="st">&#39;H&#39;</span>], kind<span class="op">=</span><span class="st">&#39;quadratic&#39;</span>)</span>
+<span id="cb34-6"><a href="ad.html#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="ad.html#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="ad.html#cb34-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span> (<span class="dv">12</span>,<span class="dv">4</span>))</span>
+<span id="cb34-9"><a href="ad.html#cb34-9" aria-hidden="true" tabindex="-1"></a>plt.scatter(df_bat.Y,df_bat.H,alpha<span class="op">=</span><span class="fl">0.5</span>,label <span class="op">=</span><span class="st">&quot;Mesures individuelles&quot;</span>)</span>
+<span id="cb34-10"><a href="ad.html#cb34-10" aria-hidden="true" tabindex="-1"></a>plt.plot(df_bat.Y,func_bat(df_bat.Y),color <span class="op">=</span><span class="st">&quot;black&quot;</span>, alpha<span class="op">=</span><span class="fl">0.3</span>,label<span class="op">=</span> <span class="st">&quot;Bathymétrie interpolée&quot;</span>)</span>
+<span id="cb34-11"><a href="ad.html#cb34-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Y [m]&#39;</span>)</span>
+<span id="cb34-12"><a href="ad.html#cb34-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Z [m]&#39;</span>)</span>
+<span id="cb34-13"><a href="ad.html#cb34-13" aria-hidden="true" tabindex="-1"></a>plt.legend(loc <span class="op">=</span> <span class="st">&#39;lower right&#39;</span>)</span>
+<span id="cb34-14"><a href="ad.html#cb34-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-17"></span>
+<img src="PROJET_LSPIV_files/figure-html/unnamed-chunk-17-1.png" alt="la bathymétrie locale" width="100%"  />
+<p class="caption">
+Figure 8: la bathymétrie locale
+</p>
+</div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="ad.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extraire les noms des fichiers texte</span></span>
+<span id="cb35-2"><a href="ad.html#cb35-2" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> os.listdir(dir_files)</span>
+<span id="cb35-3"><a href="ad.html#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="ad.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># créer un dataframe dans lequel toutes les vitesses de la zone d&#39;intérêt sont stockées</span></span>
+<span id="cb35-5"><a href="ad.html#cb35-5" aria-hidden="true" tabindex="-1"></a>vx_all <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb35-6"><a href="ad.html#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="ad.html#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co"># créer un tableau pour enregistrer les vitesses moyennes</span></span>
+<span id="cb35-8"><a href="ad.html#cb35-8" aria-hidden="true" tabindex="-1"></a>vx_mean_raw <span class="op">=</span> []</span>
+<span id="cb35-9"><a href="ad.html#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="ad.html#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> files:</span>
+<span id="cb35-11"><a href="ad.html#cb35-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># importer un fichier unique et ajouter des vitesses dans la zone d&#39;intérêt</span></span>
+<span id="cb35-12"><a href="ad.html#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># à la trame de données</span></span>
+<span id="cb35-13"><a href="ad.html#cb35-13" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_table(os.path.join(dir_files, <span class="bu">file</span>),</span>
+<span id="cb35-14"><a href="ad.html#cb35-14" aria-hidden="true" tabindex="-1"></a>                       sep<span class="op">=</span><span class="st">&#39;\s+&#39;</span>,</span>
+<span id="cb35-15"><a href="ad.html#cb35-15" aria-hidden="true" tabindex="-1"></a>                       names<span class="op">=</span>(<span class="st">&#39;X&#39;</span>, <span class="st">&#39;Y&#39;</span>, <span class="st">&#39;Vx&#39;</span>, <span class="st">&#39;Vy&#39;</span>, <span class="st">&#39;s2n&#39;</span>),</span>
+<span id="cb35-16"><a href="ad.html#cb35-16" aria-hidden="true" tabindex="-1"></a>                       header<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb35-17"><a href="ad.html#cb35-17" aria-hidden="true" tabindex="-1"></a>                       index_col<span class="op">=</span> <span class="va">False</span>)  </span>
+<span id="cb35-18"><a href="ad.html#cb35-18" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&#39;X&#39;</span>]<span class="op">=</span>df[<span class="st">&#39;X&#39;</span>].astype(<span class="st">&#39;float&#39;</span>)</span>
+<span id="cb35-19"><a href="ad.html#cb35-19" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&#39;Y&#39;</span>]<span class="op">=</span>df[<span class="st">&#39;Y&#39;</span>].astype(<span class="st">&#39;float&#39;</span>)</span>
+<span id="cb35-20"><a href="ad.html#cb35-20" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&#39;Vx&#39;</span>]<span class="op">=</span>df[<span class="st">&#39;Vx&#39;</span>].astype(<span class="st">&#39;float&#39;</span>)</span>
+<span id="cb35-21"><a href="ad.html#cb35-21" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&#39;Vy&#39;</span>]<span class="op">=</span>df[<span class="st">&#39;Vy&#39;</span>].astype(<span class="st">&#39;float&#39;</span>)</span>
+<span id="cb35-22"><a href="ad.html#cb35-22" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df[df[<span class="st">&#39;X&#39;</span>] <span class="op">&gt;</span> (centre_x <span class="op">-</span> <span class="dv">1</span>)]</span>
+<span id="cb35-23"><a href="ad.html#cb35-23" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> df[df[<span class="st">&#39;X&#39;</span>] <span class="op">&lt;</span> (centre_x <span class="op">+</span> <span class="dv">3</span>)]</span>
+<span id="cb35-24"><a href="ad.html#cb35-24" aria-hidden="true" tabindex="-1"></a>    vx_all <span class="op">=</span> vx_all.append(df)</span>
+<span id="cb35-25"><a href="ad.html#cb35-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-26"><a href="ad.html#cb35-26" aria-hidden="true" tabindex="-1"></a><span class="co"># définir les différentes coordonnées y (sections de largeur de flux)</span></span>
+<span id="cb35-27"><a href="ad.html#cb35-27" aria-hidden="true" tabindex="-1"></a>y_unique <span class="op">=</span> np.sort(df.Y.unique())</span>
+<span id="cb35-28"><a href="ad.html#cb35-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-29"><a href="ad.html#cb35-29" aria-hidden="true" tabindex="-1"></a><span class="co"># corriger les coordonnées y par rapport au &#39;centre&#39; bathymétrique</span></span>
+<span id="cb35-30"><a href="ad.html#cb35-30" aria-hidden="true" tabindex="-1"></a>y_corrected <span class="op">=</span> y_unique <span class="op">-</span> centre_y</span></code></pre></div>
+</div>
+<div id="filtrage" class="section level2 unnumbered">
+<h2>Filtrage</h2>
+<p>Comme la densité d’ensemencement n’est pas assez dense pour avoir des graines à chaque cellule de la grille, il y a des moments où aucune vitesse d’écoulement de surface n’est estimée, ce qui entraîne une large gamme de vitesses d’écoulement. Par conséquent, un filtrage supplémentaire est appliqué pour supprimer les estimations de vitesse d’écoulement inférieure.</p>
+<p>Ce filtrage est basé sur la distance d’une mesure par rapport à la vitesse d’écoulement du 95e percentile dans cette section transversale. Si une valeur est plus éloignée que deux fois l’écart type du 95er centile, cette valeur est filtrée. Ou en bref, le filtrage est appliqué lorsque l’instruction suivante est remplie:</p>
+<span class="math display">\[\begin{equation}
+V_{X} &lt; V_{q95} - 2 \cdot \sigma_{V_{X}}
+\end{equation}\]</span>
+<p>Comme cette déclaration peut entraîner un filtrage excessif, une autre instruction (ou seuil) doit être satisfaite avant que le filtrage ne soit appliqué à une section transversale. Le 95e centile doit être supérieur à 2,5 fois l’écart type:</p>
+<span class="math display">\[\begin{equation}
+V_{q95} &gt; 2.5 \cdot \sigma_{V_{X}}
+\end{equation}\]</span>
+<p>Les nouvelles estimations des vitesses d’écoulement moyennes peuvent être faites.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="ad.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tableau pour stocker les vitesses d&#39;écoulement moyennes</span></span>
+<span id="cb36-2"><a href="ad.html#cb36-2" aria-hidden="true" tabindex="-1"></a>vx_mean_fil <span class="op">=</span> []</span>
+<span id="cb36-3"><a href="ad.html#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="ad.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pour chaque section transversale</span></span>
+<span id="cb36-5"><a href="ad.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># trouver les vitesses d&#39;écoulement correspondantes et supprimer les valeurs NaN</span></span>
+<span id="cb36-6"><a href="ad.html#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> yy <span class="kw">in</span> y_unique:</span>
+<span id="cb36-7"><a href="ad.html#cb36-7" aria-hidden="true" tabindex="-1"></a>    vxi <span class="op">=</span> vx_all.Vx[vx_all.Y <span class="op">==</span> yy]</span>
+<span id="cb36-8"><a href="ad.html#cb36-8" aria-hidden="true" tabindex="-1"></a>    vxi <span class="op">=</span> vxi[np.isfinite(vxi)]</span>
+<span id="cb36-9"><a href="ad.html#cb36-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-10"><a href="ad.html#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># si toutes les valeurs sont NaN, créez un tableau de longueur 1</span></span>
+<span id="cb36-11"><a href="ad.html#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(vxi) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb36-12"><a href="ad.html#cb36-12" aria-hidden="true" tabindex="-1"></a>        vxi <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb36-13"><a href="ad.html#cb36-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-14"><a href="ad.html#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># déterminer le 95e quantile et l&#39;écart type</span></span>
+<span id="cb36-15"><a href="ad.html#cb36-15" aria-hidden="true" tabindex="-1"></a>    v_filter <span class="op">=</span> np.quantile(vxi, <span class="fl">0.95</span>)</span>
+<span id="cb36-16"><a href="ad.html#cb36-16" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.std(vxi)</span>
+<span id="cb36-17"><a href="ad.html#cb36-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-18"><a href="ad.html#cb36-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># le filtrage est appliqué si le 95e centile&gt; 2,5 * std</span></span>
+<span id="cb36-19"><a href="ad.html#cb36-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="fl">2.5</span><span class="op">*</span>std<span class="op">/</span>v_filter <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb36-20"><a href="ad.html#cb36-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># le filtrage est appliqué sur les valeurs plus éloignées que 2 * std du 95e centile</span></span>
+<span id="cb36-21"><a href="ad.html#cb36-21" aria-hidden="true" tabindex="-1"></a>        vxi_in <span class="op">=</span> vxi[vxi <span class="op">&gt;</span> v_filter <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>std]</span>
+<span id="cb36-22"><a href="ad.html#cb36-22" aria-hidden="true" tabindex="-1"></a>        vxi_out <span class="op">=</span> vxi[vxi <span class="op">&lt;</span> v_filter <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>std]</span>
+<span id="cb36-23"><a href="ad.html#cb36-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># ajouter une valeur moyenne en fonction des résultats filtrés</span></span>
+<span id="cb36-24"><a href="ad.html#cb36-24" aria-hidden="true" tabindex="-1"></a>        vx_mean_fil.append(np.mean(vxi_in))</span>
+<span id="cb36-25"><a href="ad.html#cb36-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-26"><a href="ad.html#cb36-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># si le filtrage n&#39;est pas appliqué: déterminer la moyenne sur toutes les valeurs</span></span>
+<span id="cb36-27"><a href="ad.html#cb36-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb36-28"><a href="ad.html#cb36-28" aria-hidden="true" tabindex="-1"></a>      vx_mean_fil.append(np.mean(vxi))</span></code></pre></div>
+</div>
+<div id="substitution" class="section level2 unnumbered">
+<h2>Substitution</h2>
+<p>Comme dans certaines sections transversales aucune graine n’est présente, les vitesses d’écoulement sont à coup sûr sous-estimées à ces endroits. Pour encore faire une estimation éclairée des vitesses d’écoulement à ces endroits, les vitesses d’écoulement à différents stades de l’onde de crue sont estimées et utilisées pour établir une relation entre les vitesses d’écoulement de surface et la profondeur de l’eau. Cette relation est approchée en utilisant la loi logarithmique de Prandtl-von Kármán:</p>
+<span class="math display">\[\begin{equation}
+V_{x_sub}(h) = \frac{u_{\star}}{\kappa} \ln\left[\frac{h - d}{h_0}\right]
+\end{equation}\]</span>
+<p>Dans cette formule <span class="math inline">\(V_{x_sub}(h)\)</span> est la vitesse d’écoulement à la profondeur de l’eau <span class="math inline">\(h\)</span>; <span class="math inline">\(u_{\star}\)</span> est la vitesse de cisaillement;<span class="math inline">\(\kappa\)</span> est la constante de von Kármán (<span class="math inline">\(\approx 0.41\)</span>); <span class="math inline">\(h_0\)</span> est la profondeur de rugosité; <span class="math inline">\(d\)</span> est le déplacement dans le plan zéro. Pour l’exemple de vidéo, <span class="math inline">\(u_{\star}\)</span> , <span class="math inline">\(h_0\)</span> et <span class="math inline">\(d\)</span> sont estimés à <span class="math inline">\(0.235\)</span> , <span class="math inline">\(0.054\)</span> et <span class="math inline">\(0.15\)</span>.</p>
+<p>Les vitesses d’écoulement de surface sont remplacées si la vitesse d’écoulement de surface est la moitié de la valeur de substitution et lorsque la section se trouve dans les berges du cours d’eau.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="ad.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vertical_flow(loc_wd, p, d<span class="op">=</span><span class="fl">0.15</span>):</span>
+<span id="cb37-2"><a href="ad.html#cb37-2" aria-hidden="true" tabindex="-1"></a>    us <span class="op">=</span> p[<span class="dv">0</span>]</span>
+<span id="cb37-3"><a href="ad.html#cb37-3" aria-hidden="true" tabindex="-1"></a>    h0 <span class="op">=</span> p[<span class="dv">1</span>]</span>
+<span id="cb37-4"><a href="ad.html#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> us<span class="op">/</span><span class="fl">0.41</span> <span class="op">*</span> np.log((loc_wd <span class="op">-</span> d) <span class="op">/</span> h0)</span>
+<span id="cb37-5"><a href="ad.html#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="ad.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># paramètres de vitesse d&#39;écoulement de surface de progression verticale</span></span>
+<span id="cb37-7"><a href="ad.html#cb37-7" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> [<span class="fl">0.235</span>, <span class="fl">0.054</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="ad.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># créer une copie des vitesses d&#39;écoulement moyennes filtrées</span></span>
+<span id="cb38-2"><a href="ad.html#cb38-2" aria-hidden="true" tabindex="-1"></a>vx_mean_rep <span class="op">=</span> vx_mean_fil.copy()</span>
+<span id="cb38-3"><a href="ad.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="ad.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># déterminer les profondeurs d&#39;eau à différentes coordonnées y corrigées</span></span>
+<span id="cb38-5"><a href="ad.html#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># s&#39;il y a de l&#39;eau (wd&gt; 0) et si y est compris entre -3 et 3 (pas de buissons)</span></span>
+<span id="cb38-6"><a href="ad.html#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co"># si moyenne * 2 &lt;valeur trouvée en utilisant le profil vertical</span></span>
+<span id="cb38-7"><a href="ad.html#cb38-7" aria-hidden="true" tabindex="-1"></a>wd <span class="op">=</span> wl <span class="op">-</span> func_bat(y_corrected)</span>
+<span id="cb38-8"><a href="ad.html#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nn, loc_wd <span class="kw">in</span> <span class="bu">enumerate</span>(wd):</span>
+<span id="cb38-9"><a href="ad.html#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> loc_wd <span class="op">&gt;</span> <span class="fl">0.15</span>:</span>
+<span id="cb38-10"><a href="ad.html#cb38-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (y_corrected[nn] <span class="op">&gt;</span> <span class="op">-</span><span class="fl">3.5</span>) <span class="kw">and</span> y_corrected[nn] <span class="op">&lt;</span> <span class="fl">3.5</span>:</span>
+<span id="cb38-11"><a href="ad.html#cb38-11" aria-hidden="true" tabindex="-1"></a>            <span class="co"># si 2 * la valeur médiane est inférieure à la valeur corrigée: valeur correcte</span></span>
+<span id="cb38-12"><a href="ad.html#cb38-12" aria-hidden="true" tabindex="-1"></a>            <span class="co"># tous les centiles</span></span>
+<span id="cb38-13"><a href="ad.html#cb38-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> vx_mean_rep[nn] <span class="op">&lt;</span> <span class="fl">0.5</span><span class="op">*</span>vertical_flow(loc_wd, param):</span>
+<span id="cb38-14"><a href="ad.html#cb38-14" aria-hidden="true" tabindex="-1"></a>                    vx_mean_rep[nn] <span class="op">=</span> vertical_flow(loc_wd, param)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="ad.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># afficher les vitesses individuelles et les vitesses moyennes des différentes étapes </span></span>
+<span id="cb39-2"><a href="ad.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de post-traitement</span></span>
+<span id="cb39-3"><a href="ad.html#cb39-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">9</span>))</span>
+<span id="cb39-4"><a href="ad.html#cb39-4" aria-hidden="true" tabindex="-1"></a>plt.plot(vx_mean_rep, y_corrected,</span>
+<span id="cb39-5"><a href="ad.html#cb39-5" aria-hidden="true" tabindex="-1"></a>         color<span class="op">=</span><span class="st">&#39;darkred&#39;</span>, marker<span class="op">=</span><span class="st">&#39;x&#39;</span>, zorder<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">0.75</span>, label<span class="op">=</span><span class="st">&#39;Substitué&#39;</span>)</span>
+<span id="cb39-6"><a href="ad.html#cb39-6" aria-hidden="true" tabindex="-1"></a>plt.hlines([y0, y1], xmin<span class="op">=-</span><span class="fl">0.35</span>, xmax<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">&#39;k&#39;</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">&#39;Berges&#39;</span>)</span>
+<span id="cb39-7"><a href="ad.html#cb39-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Vitesses d&#39;ecoulement et leurs valeurs moyennes&quot;</span>)</span>
+<span id="cb39-8"><a href="ad.html#cb39-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Vx [m/s]&#39;</span>)</span>
+<span id="cb39-9"><a href="ad.html#cb39-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;largeur du flux [m]&#39;</span>)</span>
+<span id="cb39-10"><a href="ad.html#cb39-10" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">.5</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## (-0.5, 3.0)</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="ad.html#cb41-1" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb41-2"><a href="ad.html#cb41-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="PROJET_LSPIV_files/figure-html/unnamed-chunk-22-1.png" width="576"  /></p>
+</div>
+<div id="estimation-de-décharge" class="section level2 unnumbered">
+<h2>Estimation de décharge</h2>
+<p>Les rejets sont estimés en utilisant la méthode de la surface de vitesse, en utilisant la formule suivante:</p>
+<span class="math display">\[\begin{equation}
+Q = \sum_{n=1}^{N} v_n \cdot d_n \cdot b_n
+\end{equation}\]</span>
+<p>D’où <span class="math inline">\(v_n\)</span> , <span class="math inline">\(d_n\)</span>, et <span class="math inline">\(b_n\)</span> sont respectivement la vitesse d’écoulement, la profondeur et la largeur moyennes en profondeur de la section.</p>
+<p>Pour la vitesse d’écoulement moyenne en profondeur, la vitesse d’écoulement de surface est multipliée par un coefficient déterminé empiriquement <span class="math inline">\(\alpha\)</span>. Ce coefficient est généralement entre <span class="math inline">\(0.72\)</span> et <span class="math inline">\(0.95\)</span>. Pour l’exemple de vidéo, le coefficient est estimé à
+<span class="math inline">\(0.85\)</span>.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="ad.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># coefficient moyen en profondeur</span></span>
+<span id="cb42-2"><a href="ad.html#cb42-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">0.85</span></span>
+<span id="cb42-3"><a href="ad.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="ad.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># sections transversales en largeur</span></span>
+<span id="cb42-5"><a href="ad.html#cb42-5" aria-hidden="true" tabindex="-1"></a>step <span class="op">=</span> y_corrected[<span class="dv">1</span>]<span class="op">-</span>y_corrected[<span class="dv">0</span>]</span>
+<span id="cb42-6"><a href="ad.html#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="ad.html#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co"># estimation de débit</span></span>
+<span id="cb42-8"><a href="ad.html#cb42-8" aria-hidden="true" tabindex="-1"></a>Q <span class="op">=</span> <span class="bu">sum</span>(vx_mean_rep <span class="op">*</span> wd  <span class="op">*</span> alpha <span class="op">*</span> step)</span>
+<span id="cb42-9"><a href="ad.html#cb42-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-10"><a href="ad.html#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Le débit moyen est estimé à </span><span class="sc">{}</span><span class="st"> m³/s&quot;</span>.<span class="bu">format</span>(<span class="bu">round</span>(Q, <span class="dv">2</span>)))</span></code></pre></div>
+<pre><code>## Le débit moyen est estimé à 3.74 m³/s</code></pre>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="piv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "White",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PROJET_LSPIV.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "static"
+},
+"search": true,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

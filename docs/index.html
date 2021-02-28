@@ -24,7 +24,7 @@
 <meta name="author" content="Antoine Viguié, Aymane Berriane, Christian Alvarez Leon, Meng Wang, Yu PENG" />
 
 
-<meta name="date" content="2020-12-08" />
+<meta name="date" content="2021-02-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +32,8 @@
   
   
 
-<link rel="next" href="contexte-du-projet.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<link rel="next" href="ip.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,18 +51,72 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -82,29 +136,20 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="1" data-path="contexte-du-projet.html"><a href="contexte-du-projet.html"><i class="fa fa-check"></i><b>1</b> Contexte du projet</a>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html"><i class="fa fa-check"></i>la préparation de l’image</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="contexte-du-projet.html"><a href="contexte-du-projet.html#zone-daction"><i class="fa fa-check"></i><b>1.1</b> Zone d’action</a></li>
-<li class="chapter" data-level="1.2" data-path="contexte-du-projet.html"><a href="contexte-du-projet.html#présentation-des-méthodes-lspiv"><i class="fa fa-check"></i><b>1.2</b> Présentation des méthodes LSPIV</a></li>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html#la-correction-de-distorsion-optique"><i class="fa fa-check"></i>La correction de distorsion optique</a></li>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html#lorthorectification"><i class="fa fa-check"></i>l’orthorectification</a></li>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html#la-mise-en-niveau-de-gris-et-la-correction-du-gamma-et-du-contraste."><i class="fa fa-check"></i>La mise en niveau de gris et la correction du gamma et du contraste.</a></li>
+<li class="chapter" data-level="" data-path="ip.html"><a href="ip.html#pour-tous-les-images"><i class="fa fa-check"></i>Pour tous les images</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="principle.html"><a href="principle.html"><i class="fa fa-check"></i><b>2</b> Méthodologie</a>
+<li class="chapter" data-level="" data-path="piv.html"><a href="piv.html"><i class="fa fa-check"></i>le traitement PIV</a></li>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html"><i class="fa fa-check"></i>l’analyse des donnée</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="principle.html"><a href="principle.html#orthorectification"><i class="fa fa-check"></i><b>2.1</b> Orthorectification</a></li>
-<li class="chapter" data-level="2.2" data-path="principle.html"><a href="principle.html#calcul-de-la-vitesse-du-déplacement-des-traceurs"><i class="fa fa-check"></i><b>2.2</b> Calcul de la vitesse du déplacement des traceurs</a></li>
-<li class="chapter" data-level="2.3" data-path="principle.html"><a href="principle.html#calcul-de-débit"><i class="fa fa-check"></i><b>2.3</b> Calcul de débit</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>3</b> Conclusion</a></li>
-<li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html"><i class="fa fa-check"></i>Application de la méthode LSPIV</a>
-<ul>
-<li class="chapter" data-level="1" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#ip"><i class="fa fa-check"></i><b>1</b> Image preparation</a>
-<ul>
-<li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#la-correction-de-distorsion-optique"><i class="fa fa-check"></i>La correction de distorsion optique</a></li>
-<li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#la-stabilisation"><i class="fa fa-check"></i>La stabilisation</a></li>
-<li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#lorthorectification-dimage"><i class="fa fa-check"></i>l’orthorectification d’image</a></li>
-<li class="chapter" data-level="" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#la-mise-en-niveau-de-gris-et-la-correction-du-gamma-et-du-contraste"><i class="fa fa-check"></i>La mise en niveau de gris et la correction du gamma et du contraste</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="application-de-la-méthode-lspiv.html"><a href="application-de-la-méthode-lspiv.html#pp"><i class="fa fa-check"></i><b>2</b> PIV processing</a></li>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html#résultats-non-traités"><i class="fa fa-check"></i>Résultats non traités</a></li>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html#filtrage"><i class="fa fa-check"></i>Filtrage</a></li>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html#substitution"><i class="fa fa-check"></i>Substitution</a></li>
+<li class="chapter" data-level="" data-path="ad.html"><a href="ad.html#estimation-de-décharge"><i class="fa fa-check"></i>Estimation de décharge</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
 <li class="divider"></li>
@@ -130,20 +175,22 @@
 <div id="header">
 <h1 class="title">La raport intermédiaire</h1>
 <p class="author"><em>Antoine Viguié, Aymane Berriane, Christian Alvarez Leon, Meng Wang, Yu PENG</em></p>
-<p class="date"><em>2020-12-08</em></p>
+<p class="date"><em>2021-02-28</em></p>
 </div>
 <div id="introduction" class="section level1 unnumbered">
 <h1>Introduction</h1>
-<!-- ```{asis, echo=!knitr::is_latex_output()} -->
-<!-- ::: {.infobox .caution} -->
-<!-- **Note**: This book is to be published by [Chapman & Hall/CRC](https://www.routledge.com/p/book/9780367563837). The online version of this book is free to read here (thanks to Chapman & Hall/CRC), and licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). If you have any feedback, please feel free to [file an issue on GitHub](https://github.com/yihui/rmarkdown-cookbook/issues/new). Thank you! -->
-<!-- ::: -->
-<!-- <p style="text-align: center;"><a href="https://www.routledge.com/p/book/9780367563837"><img src="images/cover.png" alt="The R Markdown cookbook cover" /></a></p> -->
-<!-- ``` -->
 <p style="text-align: center;">
 <img src="images/COVERPAGE.png" alt="POLYTECH NICE-SOPHIA" />
 </p>
-<p>On observe régulièrement sur la Côte d’Azur, notamment à l’automne, de forts épisodes pluvieux, pouvant engendrer des crues. Par exemple, le 23 novembre 2019, des inondations exceptionnelles se sont produites sur la Côte d’Azur et ont inondé les plaines alluviales de l’Argens, de la Siagne et de la Brague notamment. Plus récemment, début octobre 2020, les vallées de la Roya, de la Vésubie ont été ravagées par des inondations, avec 500 mm relevés pendant l’épisode à Saint-Martin-Vésubie <span class="citation">(<a href="references.html#ref-noauthor_meteo-france_nodate" role="doc-biblioref"><span>“Météo-France”</span> n.d.</a>)</span>, du jamais vu à cette station depuis les relevés météorologiques. En raison de la nature destructrice des inondations, des recherches hydrologiques sur les bassins versants doivent être menées pour prendre les mesures d’anticipation et de protection de la population. Ceci nécessite par exemple de mesurer le débit sur des sections de cours d’eau non instrumentées en appareils de mesure. Dans notre projet, le but est de calculer le débit d’une section du canal de la Siagne par le logiciel Fudaa-LSPIV. Celui-ci permet de traiter des séquences d’images ou des vidéos d’écoulements pour calculer les champs de vitesse de surface et débit de la section choisie. Ce logiciel peut s’avérer utile pour mesurer le débit de sections de rivières avec un fort courant et de nombreux objets flottants, car les méthodes classiques seraient susceptibles d’abîmer le matériel. Il s’avèrera aussi nécessaire d’utiliser une autre méthode de mesure de débit, comme l’ADCP, pour comparer les résultats obtenus.</p>
+<p>Dans cette annexe , on va présent une méthode de python qui a une fonctionnalité similaire au Fudda-LSPIV . Une petite rappel : La technique LSPIV (Large Scale Particle Image Velocimetry) permet de mesurer les vitesses de surface d’un écoulement par analyse de séquence d’images. La méthode LSPIV complète se compose généralement de trois parties
+principales:</p>
+<ol style="list-style-type: decimal">
+<li><p>la préparation de l’image qui permet de corriger la distorsion optique , et faire l’ortho rectification.</p></li>
+<li><p>le traitement PIV qui permet de calculer le champ de vitesse de surface.</p></li>
+<li><p>l’analyse des donnée qui permet en déduit le débit en utilisent le profil bathymétrique d’une section en travers et la vitesse moyennée de profondeur .</p></li>
+</ol>
+<p>Quand on utilisent le logiciel Fudda-LSPIV , Certain d’entre nous a rencontré des bug techniques ,Dans cette contexte , on a décidé d’utiliser Python Comme alternative. on s’intéresse par python , parce que le python nous offrit des fonctionnalité qui n’est pas intégré dans le logiciel Fudda-LSPIV , par exemple pour corriger la distorsion optique, c’est pas intégré dans Le Fudda-LSPIV mais c’est un étape essentiel. Et d’ailleurs, python est plus puissant pour analyser et traiter les donnés .</p>
+<p>On est surtout inspiré par le rapport Flood wave monitoring using LSPIV de G.H. Gerritsen qui est publié dans Github , dans son rapport , il décit un étude de LSPIV à Chuo Kikuu, Dar es Salaam, Tanzania, Notre étude se base sur cette étude. Les données sont accessible sur Github.</p>
 <div style="page-break-after: always;"></div>
 
 </div>
@@ -153,7 +200,7 @@
         </div>
       </div>
 
-<a href="contexte-du-projet.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ip.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
